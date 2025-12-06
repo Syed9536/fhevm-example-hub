@@ -1,0 +1,59 @@
+/* --------------------------
+   GLOBAL THEME COLORS
+--------------------------- */
+:root {
+  --vp-c-brand-1: #8b5cf6; /* Violet */
+  --vp-c-brand-2: #d946ef; /* Fuchsia */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+}
+
+/* --------------------------
+   HERO BUTTONS (PREMIUM 3D)
+--------------------------- */
+
+/* Main 'Get Started' Button */
+.VPButton.brand {
+  background: linear-gradient(90deg, #6200ea 0%, #b000e3 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50px !important; /* Pill Shape */
+  color: white !important;
+  font-weight: 800 !important;
+  padding: 14px 35px !important;
+  font-size: 1.1rem !important;
+  
+  /* NEON GLOW EFFECT */
+  box-shadow: 0 0 15px rgba(176, 0, 227, 0.5), 
+              0 5px 10px rgba(0,0,0,0.3) !important;
+  
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* Hover Effect (Chamak badhegi) */
+.VPButton.brand:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 0 30px rgba(176, 0, 227, 0.8), 
+              0 10px 20px rgba(0,0,0,0.4) !important;
+}
+
+/* Click Effect */
+.VPButton.brand:active {
+  transform: translateY(1px) scale(0.98) !important;
+  box-shadow: 0 0 10px rgba(176, 0, 227, 0.4) !important;
+}
+
+/* Secondary 'View Templates' Button */
+.VPButton.alt {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #333 !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+}
+
+.VPButton.alt:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: #6200ea !important;
+  color: #6200ea !important;
+}

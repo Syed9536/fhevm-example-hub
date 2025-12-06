@@ -1,0 +1,27 @@
+{
+  "name": "fhevm-example-hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "build": "vitepress build docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.10.1",
+    "commander": "^12.1.0",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "vitepress": "^1.5.0",
+    "vue": "^3.5.13"
+  }
+}
