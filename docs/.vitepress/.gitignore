@@ -1,0 +1,14 @@
+node_modules
+dist
+cache
+artifacts
+typechain-types
+.env
+# Generated Test Folders (Inko ignore karo)
+auction-app
+doc-test-app
+my-counter-app
+my-defi-app
+secure-app
+test-project
+my-first-project
