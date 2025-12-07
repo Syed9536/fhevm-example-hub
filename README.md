@@ -20,4 +20,4 @@ Since Zama's public devnet is currently deprecated, this hub is designed to run 
 ### 1. Start Local Node
 Open a terminal and start the FHEVM blockchain:
 ```bash
-npx hardhat node
+npx hardhat node 

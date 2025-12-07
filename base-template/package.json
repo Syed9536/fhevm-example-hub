@@ -1,49 +1,30 @@
 {
   "name": "fhevm-example-hub",
   "version": "1.0.0",
-  "description": "FHEVM Example Hub for Zama Bounty Track",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "clean": "rimraf ./fhevmTemp ./artifacts ./cache ./coverage ./types ./coverage.json ./dist && npm run typechain",
-    "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
-    "coverage": "cross-env SOLIDITY_COVERAGE=true hardhat coverage --solcoverjs ./.solcover.js --temp artifacts --testfiles \"test/**/*.ts\" && npm run typechain",
-    "lint": "npm run lint:sol && npm run lint:ts && npm run prettier:check",
-    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
-    "lint:ts": "eslint --ignore-path ./.eslintignore --ext .js,.ts .",
-    "postcompile": "npm run typechain",
-    "prettier:check": "prettier --check \"**/*.{js,json,md,sol,ts,yml}\"",
-    "prettier:write": "prettier --write \"**/*.{js,json,md,sol,ts,yml}\"",
     "test": "hardhat test",
-    "test:sepolia": "hardhat test --network sepolia",
-    "test:zama": "hardhat test --network zama",
-    "build:ts": "tsc --project tsconfig.json",
-    "typechain": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat typechain",
-    "chain": "hardhat node --network hardhat --no-deploy",
-    "fhevm:start": "docker run --platform linux/amd64 -i -p 8545:8545 -p 8546:8546 --name fhevm ghcr.io/zama-ai/fhevm:v0.5.14",
-    "fhevm:stop": "docker rm -f fhevm",
-    "deploy:localhost": "hardhat deploy --network localhost",
-    "deploy:sepolia": "hardhat deploy --network sepolia",
-    "deploy:zama": "hardhat deploy --network zama",
-    "verify:sepolia": "hardhat verify --network sepolia"
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat deploy --network localhost",
+    
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
-  "keywords": [
-    "fhevm",
-    "hardhat",
-    "zama",
-    "confidential"
-  ],
-  "author": "Syed Jafar",
-  "license": "ISC",
   "dependencies": {
-    "fhevmjs": "^0.6.1", 
-    "@fhevm/solidity": "^0.9.3",
-    "ethers": "^6.13.4"
+    "fhevmjs": "^0.6.1",
+    "dotenv": "^16.4.5",
+    "vitepress": "^1.0.0",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@fhevm/hardhat-plugin": "^0.3.2",
+    "@fhevm/solidity": "^0.9.3",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.17",
-    "hardhat-deploy": "^0.14.0",
-    "typescript": "^5.7.2",
+    "hardhat": "^2.22.5",
+    "hardhat-deploy": "^0.12.4",
+    "ethers": "^6.13.0",
+    "typescript": "^5.4.5",
     "ts-node": "^10.9.2"
   }
+}
