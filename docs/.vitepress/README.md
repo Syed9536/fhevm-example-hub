@@ -1,30 +1,29 @@
-echo "# FHEVM Example Hub 🛡️
+# 🚀 FHEVM Example Hub
 
-A comprehensive CLI tool to scaffold fully functional FHEVM (Fully Homomorphic Encryption) applications on Zama.
+A comprehensive collection of **15+ Fully Homomorphic Encryption (FHE)** examples built on **Zama's FHEVM**. This repository demonstrates how to perform arithmetic, bitwise, comparison, and advanced operations on encrypted data using Solidity.
 
-**Bounty Submission for December 2025**
+---
 
-## 🚀 Features
-- **Automated Scaffolding:** Sets up a clean Hardhat environment instantly.
-- **Auto-Documentation:** Generates README.md from Solidity code annotations.
-- **Smart Template System:** Includes pre-built logic for various use cases.
+## 🌐 Live Demo
+Check out the live documentation and example library here:
+👉 **[View Live Demo: fhevm-example-hub.vercel.app](https://fhevm-example-hub.vercel.app)**
 
-## 📦 Available Templates
-- **EncryptedCounter:** Basic encryption & arithmetic.
-- **BlindAuction:** Advanced logic (Highest bidder remains hidden).
-- **ConfidentialToken:** Compliant ERC-20 with encrypted balances.
-- **Access Control:** Data permission management.
+---
 
-## 🛠️ Usage
+## 🛠 Features
+This hub contains fully tested contracts for:
+* **🧮 Arithmetic:** Add, Sub, Mul, Div, Remainder (Scalar supported)
+* **🧠 Bitwise Logic:** AND, OR, XOR
+* **⚖️ Comparisons:** Eq, Ne, Gt, Gte, Lt, Lte
+* **🎛️ Advanced:** Multiplexer (Mux) logic
 
-### 1. Installation
-\`\`\`bash
-git clone https://github.com/Syed9536/fhevm-example-hub.git
+---
+
+## 📥 Installation & Setup
+
+You can run these examples locally using **Mock Mode** (No Docker required).
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/Syed9536/fhevm-example-hub.git](https://github.com/Syed9536/fhevm-example-hub.git)
 cd fhevm-example-hub
-npm install
-\`\`\`
-
-### 2. Generate a Project
-\`\`\`bash
-npx ts-node scripts/create-fhevm-example.ts my-app
-\`\`\`" > README.md
