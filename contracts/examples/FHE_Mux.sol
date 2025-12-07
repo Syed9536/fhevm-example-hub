@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause-Clear
 pragma solidity ^0.8.24;
-import "@fhevm/solidity/lib/TFHE.sol";
+import "fhevm/lib/TFHE.sol";
 contract FHE_Mux {
     function mux(einput _controlBit, bytes calldata _proofBit, einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {
         ebool control = TFHE.asEbool(_controlBit, _proofBit);

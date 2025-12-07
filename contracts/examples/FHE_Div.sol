@@ -1,11 +1,14 @@
 // SPDX-License-Identifier: BSD-3-Clause-Clear
 pragma solidity ^0.8.24;
-import "@fhevm/solidity/lib/TFHE.sol";
+
+import "fhevm/lib/TFHE.sol";
+
 contract FHE_Div {
-    function div(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {
-        euint32 a = TFHE.asEuint32(_a, _proofA);
-        euint32 b = TFHE.asEuint32(_b, _proofB);
+    // ⚠️ Note: FHEVM currently only supports division by a SCALAR (unencrypted number).
+    
+    // 👇 Yahan se 'view' hata diya gaya hai
+    function div(euint32 a, uint32 b) public returns (euint32) {
         euint32 result = TFHE.div(a, b);
-        TFHE.allow(result, msg.sender);
+        return result;
     }
 }

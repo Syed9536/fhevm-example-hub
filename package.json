@@ -6,14 +6,14 @@
     "test": "hardhat test",
     "compile": "hardhat compile",
     "deploy:local": "hardhat deploy --network localhost",
-    
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "fhevmjs": "^0.6.1",
     "dotenv": "^16.4.5",
+    "fhevm": "^0.6.2",
+    "fhevmjs": "^0.6.1",
     "vitepress": "latest",
     "vue": "latest"
   },
@@ -21,10 +21,10 @@
     "@fhevm/hardhat-plugin": "latest",
     "@fhevm/solidity": "latest",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "ethers": "^6.13.0",
     "hardhat": "^2.22.5",
     "hardhat-deploy": "^0.12.4",
-    "ethers": "^6.13.0",
-    "typescript": "^5.4.5",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }

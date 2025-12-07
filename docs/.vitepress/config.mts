@@ -1,57 +1,20 @@
-import { defineConfig } from 'vitepress'
-
-export default defineConfig({
-  title: "FHEVM Example Hub",
-  description: "Zama Bounty Templates",
-  
-  // Default Light Mode + Toggle Button
-  appearance: true, 
-
-  markdown: {
-    theme: {
-      light: 'github-light',
-      dark: 'dracula'
-    }
-  },
-
-  themeConfig: {
-    siteTitle: 'FHEVM Hub', 
-    logo: 'https://github.com/zama-ai.png',
-    
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples Library', link: '/examples' }, 
-      { text: 'Guide', link: '/guide/getting-started' }
-    ],
-
-    sidebar: [
+sidebar: [
       {
         text: 'Guide',
-        collapsed: false, // Isko khula rakha hai taaki dikhe
+        collapsed: false,
         items: [
           { text: 'Getting Started', link: '/guide/getting-started' },
         ]
       },
       {
-        text: '15+ FHE Examples', // 🔥 YEH HAI NAYA SECTION
-        collapsed: false, // Isko bhi khula rakha hai
+        text: '15+ FHE Examples',
+        collapsed: false,
         items: [
-          // Yeh links tumhare examples.md ke headers se match karenge
-          { text: '🧮 Arithmetic', link: '/examples#arithmetic-operations' },
-          { text: '🧠 Bitwise Logic', link: '/examples#bitwise-logic' },
-          { text: '⚖️ Comparisons', link: '/examples#comparisons' },
-          { text: '🎛️ Advanced (Mux)', link: '/examples#advanced-logic' }
+          // 👇 Maine links fix kar diye hain taaki wo headings se match karein
+          { text: '🧮 Arithmetic', link: '/examples#arithmetic' }, 
+          { text: '🧠 Bitwise Logic', link: '/examples#bitwise-logic' }, 
+          { text: '⚖️ Comparisons', link: '/examples#comparisons' }, 
+          { text: '🎛️ Advanced (Mux)', link: '/examples#advanced' } 
         ]
       }
     ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/Syed9536/fhevm-example-hub' }
-    ],
-
-    footer: {
-      message: 'Built for Zama Bounty Program December 2025.',
-      copyright: 'Copyright © 2025 Syed Jafar | FHEVM Example Hub'
-    }
-  }
-})

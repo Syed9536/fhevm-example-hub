@@ -1,71 +1,18 @@
-# 🚀 FHEVM Example Hub: Getting Started
+# 🚀 Getting Started
 
-Welcome to the FHEVM Example Hub. Use this guide to deploy and test confidential smart contracts on the Zama Devnet.
+Welcome to the **FHEVM Example Hub**. This guide will help you set up your local environment to run and test the FHE examples using **Mock Mode** (No Docker required).
 
-## Prerequisites
+## 🛠 Prerequisites
 
-- **Node.js** (v20 or higher)
-- **Git**
-- **Metamask** Wallet (required for deployment)
-
-
-
-## 📦 Installation
-
-1. Clone the repository:
-
-```bash
-git clone [https://github.com/Syed9536/fhevm-example-hub.git](https://github.com/Syed9536/fhevm-example-hub.git)
-cd fhevm-example-hub
-npm install
-```
+Before you begin, ensure you have the following installed:
+* **Node.js** (v18 or later)
+* **pnpm** (or npm/yarn)
 
 ---
 
-## 🌐 Connect to Zama Devnet (Public Testnet)
-```
-Instead of running a local node, you can deploy your confidential contracts directly to Zama's public devnet.
-```
+## 📥 Installation
 
----
-
-
-
-**1. Configure Metamask**
-
-Add the following network details to your wallet:
-
-| Setting | Value |
-| :--- | :--- |
-| **Network Name** | Zama Devnet |
-| **RPC URL** | `https://devnet.zama.ai` |
-| **Chain ID** | `8009` |
-| **Currency Symbol** | `ZAMA` |
-| **Block Explorer** | [https://main.explorer.zama.ai](https://main.explorer.zama.ai) |
-
-
----
-
-## 🚰 Get Test Funds (Faucet)
-
-You need free ZAMA tokens to pay for gas fees.
-
-1. Go to the **[Zama Faucet](https://faucet.zama.ai)**.
-2. Paste your wallet address.
-3. Click "Request". You will receive test tokens instantly.
-
----
-
-## 🚀 Deploying Templates
-
-```bash
-When running the deployment scripts, make sure to point them to the public network.
-```
----
-
-# Example
-
-```bash
-npx hardhat run scripts/deploy.ts --network zama
-```
----
+1. **Clone the Repository**
+   ```bash
+   git clone [https://github.com/Syed9536/fhevm-example-hub.git](https://github.com/Syed9536/fhevm-example-hub.git)
+   cd fhevm-example-hub
