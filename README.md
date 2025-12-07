@@ -1,30 +1,23 @@
-# FHEVM Example Hub 🛡️
+# FHEVM Hardhat Template
 
-A comprehensive CLI tool to scaffold fully functional FHEVM (Fully Homomorphic Encryption) applications on Zama.
+A Hardhat-based template for developing Fully Homomorphic Encryption (FHE) enabled Solidity smart contracts using the
+FHEVM protocol by Zama.
 
-**Bounty Submission for December 2025**
+## Quick Start
 
-## 🚀 Features
-- **Automated Scaffolding:** Sets up a clean Hardhat environment instantly.
-- **Auto-Documentation:** Generates README.md from Solidity code annotations.
-- **Smart Template System:** Includes pre-built logic for various use cases.
+For detailed instructions see:
+[FHEVM Hardhat Quick Start Tutorial](https://docs.zama.ai/protocol/solidity-guides/getting-started/quick-start-tutorial)
 
-## 📦 Available Templates
-- **EncryptedCounter:** Basic encryption & arithmetic.
-- **BlindAuction:** Advanced logic (Highest bidder remains hidden).
-- **ConfidentialToken:** Compliant ERC-20 with encrypted balances.
-- **Access Control:** Data permission management.
+### Prerequisites
 
-## 🛠️ Usage
+- **Node.js**: Version 20 or higher
+- **npm or yarn/pnpm**: Package manager
 
-### 1. Installation
+## 🚀 Deployment & Testing
+
+Since Zama's public devnet is currently deprecated, this hub is designed to run on a **Local FHEVM Node** (Docker).
+
+### 1. Start Local Node
+Open a terminal and start the FHEVM blockchain:
 ```bash
-git clone https://github.com/Syed9536/fhevm-example-hub.git
-cd fhevm-example-hub
-npm install
-```
-
-### 2. Generate a Project
-```bash
-npx ts-node scripts/create-fhevm-example.ts my-app
-```
+npx hardhat node
