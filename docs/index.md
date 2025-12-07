@@ -7,11 +7,11 @@ hero:
   tagline: Build confidential smart contracts on Zama in seconds.
   actions:
     - theme: brand
-      text: Get Started
+      text: Get Started 🚀
       link: /guide/getting-started
     - theme: alt
-      text: View Templates
-      link: /templates/blind-auction
+      text: View Templates 📚
+      link: /examples
 
 features:
   - title: ⚡ Instant Setup

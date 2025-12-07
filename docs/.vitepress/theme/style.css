@@ -1,59 +1,300 @@
-/* --------------------------
-   GLOBAL THEME COLORS
---------------------------- */
+/* ------------------------------------------------
+   GLOBAL VARIABLES
+------------------------------------------------- */
 :root {
-  --vp-c-brand-1: #8b5cf6; /* Violet */
-  --vp-c-brand-2: #d946ef; /* Fuchsia */
+  --vp-c-brand-1: #6366f1; /* Indigo */
+  --vp-c-brand-2: #ec4899; /* Pink */
+  
+  /* Light Mode Default Hero Gradient */
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #6366f1 30%, #ec4899);
 }
 
-/* --------------------------
-   HERO BUTTONS (PREMIUM 3D)
---------------------------- */
+/* ------------------------------------------------
+   1. HEADER / NAVBAR (ULTRA PREMIUM GLASS) 💎
+------------------------------------------------- */
 
-/* Main 'Get Started' Button */
-.VPButton.brand {
-  background: linear-gradient(90deg, #6200ea 0%, #b000e3 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 50px !important; /* Pill Shape */
-  color: white !important;
-  font-weight: 800 !important;
-  padding: 14px 35px !important;
-  font-size: 1.1rem !important;
+/* LIGHT MODE: Apple-Style Frosted Glass */
+.VPNavBar {
+  /* Zyada transparency taaki blur dikhe */
+  background-color: rgba(255, 255, 255, 0.65) !important; 
   
-  /* NEON GLOW EFFECT */
-  box-shadow: 0 0 15px rgba(176, 0, 227, 0.5), 
-              0 5px 10px rgba(0,0,0,0.3) !important;
+  /* The Secret Sauce: Saturation + High Blur */
+  backdrop-filter: saturate(180%) blur(20px) !important; 
   
-  transition: all 0.3s ease-in-out !important;
+  /* Very subtle separation line */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important; 
+  
+  /* Soft, wide floating shadow */
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.04) !important; 
 }
 
-/* Hover Effect (Chamak badhegi) */
-.VPButton.brand:hover {
-  transform: translateY(-3px) scale(1.05) !important;
-  box-shadow: 0 0 30px rgba(176, 0, 227, 0.8), 
-              0 10px 20px rgba(0,0,0,0.4) !important;
+/* DARK MODE: Cyberpunk Glass */
+.dark .VPNavBar {
+  background-color: rgba(10, 10, 15, 0.75) !important; /* Dark & Deep */
+  backdrop-filter: saturate(180%) blur(20px) !important;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.2) !important; /* Neon Line */
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Click Effect */
-.VPButton.brand:active {
-  transform: translateY(1px) scale(0.98) !important;
-  box-shadow: 0 0 10px rgba(176, 0, 227, 0.4) !important;
-}
-
-/* Secondary 'View Templates' Button */
-.VPButton.alt {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  color: #333 !important;
-  border-radius: 50px !important;
+/* ------------------------------------------------
+   NAV LINKS HOVER EFFECT (Pill Background)
+------------------------------------------------- */
+.VPNavBarNav .link {
+  padding: 6px 14px !important;
+  border-radius: 20px;
+  transition: all 0.2s ease;
   font-weight: 600 !important;
 }
 
+/* Hover karne pe halka background aayega */
+.VPNavBarNav .link:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Light Mode hover */
+  color: #6366f1 !important;
+}
+
+.dark .VPNavBarNav .link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Dark Mode hover */
+  color: #22d3ee !important;
+}
+
+/* ------------------------------------------------
+   LOGO TITLE STYLING
+------------------------------------------------- */
+.VPNavBarTitle .title {
+  font-weight: 800 !important;
+  font-size: 1.35rem !important;
+  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+
+/* Light Mode: Deep Purple Text */
+.VPNavBarTitle .title {
+  color: #4c1d95 !important; 
+}
+
+/* Dark Mode: Neon Gradient */
+.dark .VPNavBarTitle .title {
+  background: linear-gradient(to right, #d946ef, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ------------------------------------------------
+   2. BUTTONS (PILL SHAPE 3D)
+------------------------------------------------- */
+.VPButton {
+  border-radius: 50px !important;
+  padding: 12px 30px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none !important;
+  min-width: 160px !important;
+  text-align: center !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Get Started - Purple Gradient (Always) */
+.VPButton.brand {
+  background: linear-gradient(90deg, #7c3aed 0%, #db2777 100%) !important;
+  color: #fff !important;
+  box-shadow: 0px 5px 0px #4c1d95, 0px 5px 15px rgba(124, 58, 237, 0.3) !important;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0px 8px 0px #4c1d95, 0px 8px 25px rgba(124, 58, 237, 0.5) !important;
+}
+
+.VPButton.brand:active {
+  transform: translateY(4px) !important;
+  box-shadow: 0px 0px 0px #4c1d95 !important;
+}
+
+/* View Templates - SMART COLORING */
+/* Light Mode: Clean Grey/White with Shadow */
+.VPButton.alt {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+  box-shadow: 0px 5px 0px #9ca3af !important;
+}
+
 .VPButton.alt:hover {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border-color: #6200ea !important;
-  color: #6200ea !important;
+  background: #fff !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Dark Mode Override: Cyber Metal */
+.dark .VPButton.alt {
+  background: #1f2937 !important;
+  color: #22d3ee !important;
+  border: 1px solid #22d3ee !important;
+  box-shadow: 0px 5px 0px #0e7490 !important;
+}
+
+.dark .VPButton.alt:hover {
+  background: #22d3ee !important;
+  color: #000 !important;
+  box-shadow: 0px 8px 0px #0e7490, 0px 0px 20px rgba(34, 211, 238, 0.5) !important;
+}
+
+/* ------------------------------------------------
+   3. EXTRAS (Sidebar, Backgrounds, Footer)
+------------------------------------------------- */
+
+/* Footer Styles */
+.VPFooter {
+  padding: 40px !important;
+  border-top: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.dark .VPFooter {
+  background-color: #020617 !important;
+  border-top: 1px solid rgba(168, 85, 247, 0.3) !important; /* Neon Purple Line */
+}
+
+.dark .VPFooter .copyright {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Sidebar & Layout Dark Mode Fixes */
+.dark .VPSidebar {
+  background-color: #111827 !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .Layout {
+  background-color: #030712 !important;
+}
+
+/* ------------------------------------------------
+   4. PREMIUM CODE BLOCKS (LIGHT & DARK MODE FIX) 👨‍💻
+------------------------------------------------- */
+
+/* --- GENERAL SETTINGS (Both Modes) --- */
+.vp-doc div[class*='language-'] {
+  border-radius: 12px !important;
+  margin: 20px 0 !important;
+  transition: all 0.2s ease;
+}
+
+/* --- LIGHT MODE SETTINGS (Clean & Readable) --- */
+/* Jab user White Mode mein ho */
+:root:not(.dark) .vp-doc div[class*='language-'] {
+  background-color: #f8fafc !important; /* Very Light Grey */
+  border: 1px solid #e2e8f0 !important; /* Subtle Border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+:root:not(.dark) .vp-doc div[class*='language-'] span.lang {
+  color: #64748b !important; /* Grey Text */
+  background-color: #f1f5f9 !important;
+}
+
+:root:not(.dark) .vp-doc div[class*='language-'] pre code {
+  color: #334155 !important; /* Dark Blue-Grey Text (Readable) */
+}
+
+/* Light Mode mein Copy Button */
+:root:not(.dark) .vp-doc div[class*='language-'] button.copy {
+  color: #94a3b8;
+}
+:root:not(.dark) .vp-doc div[class*='language-'] button.copy:hover {
+  color: #6366f1; /* Purple Hover */
+  background-color: #e0e7ff;
+}
+
+
+/* --- DARK MODE SETTINGS (Neon Hacker Style) --- */
+/* Jab user Dark Mode on kare */
+.dark .vp-doc div[class*='language-'] {
+  background-color: #0f172a !important; /* Deep Blue-Black */
+  border: 1px solid rgba(34, 211, 238, 0.2) !important; /* Neon Cyan Border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .vp-doc div[class*='language-'] span.lang {
+  color: #22d3ee !important; /* Neon Text */
+  background-color: rgba(34, 211, 238, 0.1) !important;
+}
+
+/* Dark Mode mein Text Color Dracula Theme se aayega (Config se controlled) */
+.dark .vp-doc div[class*='language-'] pre code {
+  font-family: 'Fira Code', monospace;
+}
+
+.dark .vp-doc div[class*='language-'] button.copy {
+  color: #94a3b8;
+}
+.dark .vp-doc div[class*='language-'] button.copy:hover {
+  color: #22d3ee;
+  background-color: rgba(34, 211, 238, 0.1);
+}
+
+/* --- INLINE CODE (Backticks ` `) --- */
+/* Light Mode */
+:not(pre) > code {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  color: #4f46e5 !important; /* Deep Indigo */
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+  padding: 2px 6px !important;
+  border-radius: 6px !important;
+}
+
+/* Dark Mode */
+.dark :not(pre) > code {
+  background-color: rgba(34, 211, 238, 0.15) !important;
+  color: #22d3ee !important; /* Neon Cyan */
+  border: 1px solid rgba(34, 211, 238, 0.2) !important;
+}
+
+/* Scrollbar */
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar {
+  height: 8px;
+}
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1; /* Light Grey */
+  border-radius: 4px;
+}
+.dark .vp-doc div[class*='language-'] pre::-webkit-scrollbar-thumb {
+  background-color: #334155; /* Dark Grey */
+}
+
+/* ------------------------------------------------
+   5. ZAMA LOGO STYLING (GITHUB AVATAR) 🟡
+------------------------------------------------- */
+
+.VPNavBarTitle .logo {
+  height: 32px !important; /* Thoda bada size */
+  width: 32px !important;
+  margin-right: 12px !important;
+  border-radius: 6px !important; /* Slightly Rounded Corners (Premium) */
+  
+  /* Initial Look */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* DARK MODE: GOLDEN GLOW 🌟 */
+.dark .VPNavBarTitle .logo {
+  /* Yellow Glow jo border pe chamkega */
+  box-shadow: 0 0 15px rgba(255, 230, 0, 0.3);
+  border: 1px solid rgba(255, 230, 0, 0.4);
+}
+
+/* LIGHT MODE: CLEAN SHADOW */
+:root:not(.dark) .VPNavBarTitle .logo {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* HOVER EFFECT: 3D Pop */
+.VPNavBarTitle:hover .logo {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 25px rgba(255, 230, 0, 0.6); /* Glow intense ho jayega */
 }

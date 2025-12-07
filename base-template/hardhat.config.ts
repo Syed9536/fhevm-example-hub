@@ -1,79 +1,51 @@
-import "@fhevm/hardhat-plugin";
-import "@nomicfoundation/hardhat-chai-matchers";
-import "@nomicfoundation/hardhat-ethers";
-import "@nomicfoundation/hardhat-verify";
-import "@typechain/hardhat";
-import "hardhat-deploy";
-import "hardhat-gas-reporter";
-import type { HardhatUserConfig } from "hardhat/config";
-import { vars } from "hardhat/config";
-import "solidity-coverage";
+const path = require('path');
+const fs = require('fs');
+require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
-import "./tasks/accounts";
-import "./tasks/FHECounter";
+// --- Plugins must be required here ---
+require("@fhevm/hardhat-plugin");
+require("hardhat-deploy"); // 👈 HHE404 FIX
+require("@nomicfoundation/hardhat-ethers"); // Hardhat Ethers ke liye
+require("hardhat-gas-reporter");
+require("solidity-coverage");
 
-// Run 'npx hardhat vars setup' to see the list of variables that need to be set
+// Remove @nomicfoundation/hardhat-toolbox to prevent plugin conflicts
 
-const MNEMONIC: string = vars.get("MNEMONIC", "test test test test test test test test test test test junk");
-const INFURA_API_KEY: string = vars.get("INFURA_API_KEY", "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
-const config: HardhatUserConfig = {
+/** @type import('hardhat/config').HardhatUserConfig */
+module.exports = {
   defaultNetwork: "hardhat",
   namedAccounts: {
     deployer: 0,
   },
-  etherscan: {
-    apiKey: {
-      sepolia: vars.get("ETHERSCAN_API_KEY", ""),
-    },
-  },
-  gasReporter: {
-    currency: "USD",
-    enabled: process.env.REPORT_GAS ? true : false,
-    excludeContracts: [],
-  },
   networks: {
     hardhat: {
-      accounts: {
-        mnemonic: MNEMONIC,
-      },
       chainId: 31337,
     },
-    anvil: {
-      accounts: {
-        mnemonic: MNEMONIC,
-        path: "m/44'/60'/0'/0/",
-        count: 10,
-      },
-      chainId: 31337,
-      url: "http://localhost:8545",
+    // ZAMA DEVNET (Target Network for Bounty Submission)
+    zama: {
+      url: "https://devnet.zama.ai", 
+      chainId: 8009, 
+      // Accounts are loaded only if PRIVATE_KEY exists in .env
+      ...(PRIVATE_KEY ? { accounts: [PRIVATE_KEY] } : {}),
     },
+    // Optional: Keep Sepolia
     sepolia: {
-      accounts: {
-        mnemonic: MNEMONIC,
-        path: "m/44'/60'/0'/0/",
-        count: 10,
-      },
       chainId: 11155111,
-      url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
+      url: `https://rpc.ankr.com/eth_sepolia`,
+      ...(PRIVATE_KEY ? { accounts: [PRIVATE_KEY] } : {}),
     },
   },
   paths: {
-    artifacts: "./artifacts",
-    cache: "./cache",
     sources: "./contracts",
     tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts",
   },
   solidity: {
     version: "0.8.27",
     settings: {
-      metadata: {
-        // Not including the metadata hash
-        // https://github.com/paulrberg/hardhat-template/issues/31
-        bytecodeHash: "none",
-      },
-      // Disable the optimizer when debugging
-      // https://hardhat.org/hardhat-network/#solidity-optimizer-support
       optimizer: {
         enabled: true,
         runs: 800,
@@ -81,10 +53,7 @@ const config: HardhatUserConfig = {
       evmVersion: "cancun",
     },
   },
-  typechain: {
-    outDir: "types",
-    target: "ethers-v6",
-  },
+  // Ensure the file is treated as a CJS module (if file is named .js)
+  // If file is named hardhat.config.ts, this is ignored.
+  // The crucial part is we replaced `export default config` with `module.exports = config`.
 };
-
-export default config;
