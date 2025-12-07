@@ -1,0 +1,84 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "@fhevm/solidity/lib/TFHE.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\n\ntype einput is bytes32;\ntype ebool is uint256;\ntype euint32 is uint256;\n\nlibrary TFHE {\n    function asEuint32(einput, bytes calldata) internal pure returns (euint32) { return euint32.wrap(0); }\n    function asEbool(einput, bytes calldata) internal pure returns (ebool) { return ebool.wrap(0); }\n    function add(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function sub(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function mul(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function div(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function rem(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function and(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function or(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function xor(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function eq(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\n    function ne(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\n    function gt(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\n    function lt(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\n    function ge(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\n    function le(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\n    function select(ebool, euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\n    function allow(euint32, address) internal pure {}\n    function allow(ebool, address) internal pure {}\n}\n"
+    },
+    "contracts/Counter.sol": {
+      "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract Counter {\n  uint public x;\n\n  event Increment(uint by);\n\n  function inc() public {\n    x++;\n    emit Increment(1);\n  }\n\n  function incBy(uint by) public {\n    require(by > 0, \"incBy: increment should be positive\");\n    x += by;\n    emit Increment(by);\n  }\n}\n"
+    },
+    "contracts/examples/FHE_Add.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Add {\n    function add(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.add(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_And.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_And {\n    function bitwiseAnd(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.and(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Div.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Div {\n    function div(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.div(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Eq.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Eq {\n    function checkEq(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        ebool result = TFHE.eq(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Gt.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Gt {\n    function checkGt(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        ebool result = TFHE.gt(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Gte.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Gte {\n    function checkGte(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        ebool result = TFHE.ge(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Lt.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Lt {\n    function checkLt(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        ebool result = TFHE.lt(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Lte.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Lte {\n    function checkLte(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        ebool result = TFHE.le(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Mul.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Mul {\n    function mul(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.mul(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Mux.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Mux {\n    function mux(einput _controlBit, bytes calldata _proofBit, einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        ebool control = TFHE.asEbool(_controlBit, _proofBit);\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.select(control, a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Ne.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Ne {\n    function checkNe(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        ebool result = TFHE.ne(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Or.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Or {\n    function bitwiseOr(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.or(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Rem.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Rem {\n    function rem(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.rem(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Sub.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Sub {\n    function sub(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.sub(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    },
+    "contracts/examples/FHE_Xor.sol": {
+      "content": "// SPDX-License-Identifier: BSD-3-Clause-Clear\npragma solidity ^0.8.24;\nimport \"@fhevm/solidity/lib/TFHE.sol\";\ncontract FHE_Xor {\n    function bitwiseXor(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\n        euint32 a = TFHE.asEuint32(_a, _proofA);\n        euint32 b = TFHE.asEuint32(_b, _proofB);\n        euint32 result = TFHE.xor(a, b);\n        TFHE.allow(result, msg.sender);\n    }\n}"
+    }
+  },
+  "settings": {
+    "evmVersion": "paris",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

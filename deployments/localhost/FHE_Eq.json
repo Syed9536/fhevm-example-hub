@@ -1,0 +1,69 @@
+{
+  "address": "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "einput",
+          "name": "_a",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_proofA",
+          "type": "bytes"
+        },
+        {
+          "internalType": "einput",
+          "name": "_b",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_proofB",
+          "type": "bytes"
+        }
+      ],
+      "name": "checkEq",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x69cb567b44de2d8f7f9f0f3e62898a03e83a19dfc185f20386694e3aa6241a2f",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+    "transactionIndex": 0,
+    "gasUsed": "171377",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x7e6624ef1a4082c06e39700819d7f189bfd2715b77eeedfd7dee28b9681c774b",
+    "transactionHash": "0x69cb567b44de2d8f7f9f0f3e62898a03e83a19dfc185f20386694e3aa6241a2f",
+    "logs": [],
+    "blockNumber": 9,
+    "cumulativeGasUsed": "171377",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "5576132902fbc32c5d93c509f268feef",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.28+commit.7893614a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"einput\",\"name\":\"_a\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_proofA\",\"type\":\"bytes\"},{\"internalType\":\"einput\",\"name\":\"_b\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_proofB\",\"type\":\"bytes\"}],\"name\":\"checkEq\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/examples/FHE_Eq.sol\":\"FHE_Eq\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@fhevm/solidity/lib/TFHE.sol\":{\"content\":\"// SPDX-License-Identifier: BSD-3-Clause-Clear\\npragma solidity ^0.8.24;\\n\\ntype einput is bytes32;\\ntype ebool is uint256;\\ntype euint32 is uint256;\\n\\nlibrary TFHE {\\n    function asEuint32(einput, bytes calldata) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function asEbool(einput, bytes calldata) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function add(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function sub(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function mul(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function div(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function rem(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function and(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function or(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function xor(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function eq(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function ne(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function gt(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function lt(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function ge(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function le(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function select(ebool, euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function allow(euint32, address) internal pure {}\\n    function allow(ebool, address) internal pure {}\\n}\\n\",\"keccak256\":\"0x6f841af18da58f9eb009db8d0ece9da339dc7fb849a2174d327a13c50e5cf8ba\",\"license\":\"BSD-3-Clause-Clear\"},\"contracts/examples/FHE_Eq.sol\":{\"content\":\"// SPDX-License-Identifier: BSD-3-Clause-Clear\\npragma solidity ^0.8.24;\\nimport \\\"@fhevm/solidity/lib/TFHE.sol\\\";\\ncontract FHE_Eq {\\n    function checkEq(einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\\n        euint32 a = TFHE.asEuint32(_a, _proofA);\\n        euint32 b = TFHE.asEuint32(_b, _proofB);\\n        ebool result = TFHE.eq(a, b);\\n        TFHE.allow(result, msg.sender);\\n    }\\n}\",\"keccak256\":\"0xab9821edde7b4d37ef56f50bffa9bc510940bb395aee0207fa2e4fda08c314b8\",\"license\":\"BSD-3-Clause-Clear\"}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b506102248061001f6000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063506aded114610030575b600080fd5b61004a60048036038101906100459190610147565b61004c565b005b600061005987878761008d565b9050600061006885858561008d565b905060006100768383610096565b9050610082813361009e565b505050505050505050565b60009392505050565b600092915050565b5050565b600080fd5b600080fd5b6000819050919050565b6100bf816100ac565b81146100ca57600080fd5b50565b6000813590506100dc816100b6565b92915050565b600080fd5b600080fd5b600080fd5b60008083601f840112610107576101066100e2565b5b8235905067ffffffffffffffff811115610124576101236100e7565b5b6020830191508360018202830111156101405761013f6100ec565b5b9250929050565b60008060008060008060808789031215610164576101636100a2565b5b600061017289828a016100cd565b965050602087013567ffffffffffffffff811115610193576101926100a7565b5b61019f89828a016100f1565b955095505060406101b289828a016100cd565b935050606087013567ffffffffffffffff8111156101d3576101d26100a7565b5b6101df89828a016100f1565b9250925050929550929550929556fea2646970667358221220d502c01e344cbae5586b8d319d21d356d0b1e6da941ad4c91e79778aa897bbde64736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063506aded114610030575b600080fd5b61004a60048036038101906100459190610147565b61004c565b005b600061005987878761008d565b9050600061006885858561008d565b905060006100768383610096565b9050610082813361009e565b505050505050505050565b60009392505050565b600092915050565b5050565b600080fd5b600080fd5b6000819050919050565b6100bf816100ac565b81146100ca57600080fd5b50565b6000813590506100dc816100b6565b92915050565b600080fd5b600080fd5b600080fd5b60008083601f840112610107576101066100e2565b5b8235905067ffffffffffffffff811115610124576101236100e7565b5b6020830191508360018202830111156101405761013f6100ec565b5b9250929050565b60008060008060008060808789031215610164576101636100a2565b5b600061017289828a016100cd565b965050602087013567ffffffffffffffff811115610193576101926100a7565b5b61019f89828a016100f1565b955095505060406101b289828a016100cd565b935050606087013567ffffffffffffffff8111156101d3576101d26100a7565b5b6101df89828a016100f1565b9250925050929550929550929556fea2646970667358221220d502c01e344cbae5586b8d319d21d356d0b1e6da941ad4c91e79778aa897bbde64736f6c634300081c0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

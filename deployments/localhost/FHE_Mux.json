@@ -1,0 +1,79 @@
+{
+  "address": "0x9A676e781A523b5d0C0e43731313A708CB607508",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "einput",
+          "name": "_controlBit",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_proofBit",
+          "type": "bytes"
+        },
+        {
+          "internalType": "einput",
+          "name": "_a",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_proofA",
+          "type": "bytes"
+        },
+        {
+          "internalType": "einput",
+          "name": "_b",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_proofB",
+          "type": "bytes"
+        }
+      ],
+      "name": "mux",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x74ea27d75f19b7a96c4090ed6bfa7258a3ea23d3fdf44131b773bdaeaa3a7ed9",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0x9A676e781A523b5d0C0e43731313A708CB607508",
+    "transactionIndex": 0,
+    "gasUsed": "193385",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x5bf6c6ca126f9e7e2a04f3cca8dbb4ae0c7b3880abb4eaf6b5c58aa46372ec97",
+    "transactionHash": "0x74ea27d75f19b7a96c4090ed6bfa7258a3ea23d3fdf44131b773bdaeaa3a7ed9",
+    "logs": [],
+    "blockNumber": 15,
+    "cumulativeGasUsed": "193385",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "5576132902fbc32c5d93c509f268feef",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.28+commit.7893614a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"einput\",\"name\":\"_controlBit\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_proofBit\",\"type\":\"bytes\"},{\"internalType\":\"einput\",\"name\":\"_a\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_proofA\",\"type\":\"bytes\"},{\"internalType\":\"einput\",\"name\":\"_b\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_proofB\",\"type\":\"bytes\"}],\"name\":\"mux\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/examples/FHE_Mux.sol\":\"FHE_Mux\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@fhevm/solidity/lib/TFHE.sol\":{\"content\":\"// SPDX-License-Identifier: BSD-3-Clause-Clear\\npragma solidity ^0.8.24;\\n\\ntype einput is bytes32;\\ntype ebool is uint256;\\ntype euint32 is uint256;\\n\\nlibrary TFHE {\\n    function asEuint32(einput, bytes calldata) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function asEbool(einput, bytes calldata) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function add(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function sub(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function mul(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function div(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function rem(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function and(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function or(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function xor(euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function eq(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function ne(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function gt(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function lt(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function ge(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function le(euint32, euint32) internal pure returns (ebool) { return ebool.wrap(0); }\\n    function select(ebool, euint32, euint32) internal pure returns (euint32) { return euint32.wrap(0); }\\n    function allow(euint32, address) internal pure {}\\n    function allow(ebool, address) internal pure {}\\n}\\n\",\"keccak256\":\"0x6f841af18da58f9eb009db8d0ece9da339dc7fb849a2174d327a13c50e5cf8ba\",\"license\":\"BSD-3-Clause-Clear\"},\"contracts/examples/FHE_Mux.sol\":{\"content\":\"// SPDX-License-Identifier: BSD-3-Clause-Clear\\npragma solidity ^0.8.24;\\nimport \\\"@fhevm/solidity/lib/TFHE.sol\\\";\\ncontract FHE_Mux {\\n    function mux(einput _controlBit, bytes calldata _proofBit, einput _a, bytes calldata _proofA, einput _b, bytes calldata _proofB) public {\\n        ebool control = TFHE.asEbool(_controlBit, _proofBit);\\n        euint32 a = TFHE.asEuint32(_a, _proofA);\\n        euint32 b = TFHE.asEuint32(_b, _proofB);\\n        euint32 result = TFHE.select(control, a, b);\\n        TFHE.allow(result, msg.sender);\\n    }\\n}\",\"keccak256\":\"0x8d6be36c5cd04515cdd91e42cd15b5bb5ea36399601d29e063191b3514c57e0d\",\"license\":\"BSD-3-Clause-Clear\"}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b5061028a8061001f6000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80639d57bf2f14610030575b600080fd5b61004a60048036038101906100459190610165565b61004c565b005b60006100598a8a8a6100a1565b905060006100688888886100aa565b905060006100778686866100aa565b905060006100868484846100b3565b905061009281336100bc565b50505050505050505050505050565b60009392505050565b60009392505050565b60009392505050565b5050565b600080fd5b600080fd5b6000819050919050565b6100dd816100ca565b81146100e857600080fd5b50565b6000813590506100fa816100d4565b92915050565b600080fd5b600080fd5b600080fd5b60008083601f84011261012557610124610100565b5b8235905067ffffffffffffffff81111561014257610141610105565b5b60208301915083600182028301111561015e5761015d61010a565b5b9250929050565b600080600080600080600080600060c08a8c031215610187576101866100c0565b5b60006101958c828d016100eb565b99505060208a013567ffffffffffffffff8111156101b6576101b56100c5565b5b6101c28c828d0161010f565b985098505060406101d58c828d016100eb565b96505060608a013567ffffffffffffffff8111156101f6576101f56100c5565b5b6102028c828d0161010f565b955095505060806102158c828d016100eb565b93505060a08a013567ffffffffffffffff811115610236576102356100c5565b5b6102428c828d0161010f565b9250925050929598509295985092959856fea26469706673582212201187c0f67cd6155a8faae858c605680b8b776032b1f9a2d4f711e050a5c6662064736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c80639d57bf2f14610030575b600080fd5b61004a60048036038101906100459190610165565b61004c565b005b60006100598a8a8a6100a1565b905060006100688888886100aa565b905060006100778686866100aa565b905060006100868484846100b3565b905061009281336100bc565b50505050505050505050505050565b60009392505050565b60009392505050565b60009392505050565b5050565b600080fd5b600080fd5b6000819050919050565b6100dd816100ca565b81146100e857600080fd5b50565b6000813590506100fa816100d4565b92915050565b600080fd5b600080fd5b600080fd5b60008083601f84011261012557610124610100565b5b8235905067ffffffffffffffff81111561014257610141610105565b5b60208301915083600182028301111561015e5761015d61010a565b5b9250929050565b600080600080600080600080600060c08a8c031215610187576101866100c0565b5b60006101958c828d016100eb565b99505060208a013567ffffffffffffffff8111156101b6576101b56100c5565b5b6101c28c828d0161010f565b985098505060406101d58c828d016100eb565b96505060608a013567ffffffffffffffff8111156101f6576101f56100c5565b5b6102028c828d0161010f565b955095505060806102158c828d016100eb565b93505060a08a013567ffffffffffffffff811115610236576102356100c5565b5b6102428c828d0161010f565b9250925050929598509295985092959856fea26469706673582212201187c0f67cd6155a8faae858c605680b8b776032b1f9a2d4f711e050a5c6662064736f6c634300081c0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

@@ -4,7 +4,7 @@ cache
 artifacts
 typechain-types
 .env
-# Generated Test Folders (Inko ignore karo)
+# Generated Test Folders (igone these)
 auction-app
 doc-test-app
 my-counter-app

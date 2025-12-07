@@ -1,40 +1,15 @@
 {
   "name": "fhevm-example-hub",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "build": "vitepress build docs"
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy:zama": "hardhat deploy --network zama"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^4.0.3",
-    "@nomicfoundation/hardhat-ignition": "^3.0.6",
-    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "^3.0.2",
-    "@types/chai": "^4.3.20",
-    "@types/chai-as-promised": "^8.0.2",
-    "@types/fs-extra": "^11.0.4",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^22.10.1",
-    "chai": "^5.3.3",
-    "commander": "^12.1.0",
-    "ejs": "^3.1.10",
-    "ethers": "^6.16.0",
-    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
-    "fs-extra": "^11.2.0",
-    "hardhat": "^3.0.17",
-    "hardhat-deploy": "^1.0.4",
-    "mocha": "^11.7.5",
-    "ts-node": "^10.9.2",
-    "typescript": "~5.8.0",
-    "vitepress": "^1.5.0",
-    "vue": "^3.5.13"
-  },
-  "type": "module"
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.5",
+    "hardhat-deploy": "^0.12.4",
+    "dotenv": "^16.4.5"
+  }
 }
