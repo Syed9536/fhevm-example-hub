@@ -4,8 +4,7 @@ Explore our collection of **15+ FHEVM Examples** hosted directly on this hub.
 
 ---
 
-## 🧮 Arithmetic
-
+## Arithmetic
 ### [FHE_Add](/templates/fhe-add)
 View the source code and usage guide for **FHE_Add** (Addition).
 
@@ -23,8 +22,7 @@ View the source code and usage guide for **FHE_Rem** (Remainder).
 
 ---
 
-## 🧠 Bitwise Logic
-
+## Bitwise Logic
 ### [FHE_And](/templates/fhe-and)
 View the source code and usage guide for **FHE_And** (Bitwise AND).
 
@@ -36,8 +34,7 @@ View the source code and usage guide for **FHE_Xor** (Bitwise XOR).
 
 ---
 
-## ⚖️ Comparisons
-
+## Comparisons
 ### [FHE_Eq](/templates/fhe-eq)
 View the source code and usage guide for **FHE_Eq** (Equal to).
 
@@ -58,7 +55,6 @@ View the source code and usage guide for **FHE_Lte** (Less Than or Equal).
 
 ---
 
-## 🎛️ Advanced
-
+## Advanced
 ### [FHE_Mux](/templates/fhe-mux)
 View the source code and usage guide for **FHE_Mux** (Multiplexer / If-Else Logic).
