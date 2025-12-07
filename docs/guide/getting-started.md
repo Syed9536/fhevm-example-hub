@@ -4,7 +4,7 @@ Welcome to the FHEVM Example Hub. Use this guide to deploy and test confidential
 
 ## Prerequisites
 
-- **Node.js** (v20 or higher)
+- **{Node.js}(https://nodejs.org/en/download)** (v20 or higher)
 - **Git**
 - **Metamask** Wallet (required for deployment)
 
