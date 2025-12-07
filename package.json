@@ -1,15 +1,30 @@
 {
   "name": "fhevm-example-hub",
   "version": "1.0.0",
+  "description": "FHEVM Example Hub",
   "scripts": {
     "test": "hardhat test",
     "compile": "hardhat compile",
-    "deploy:zama": "hardhat deploy --network zama"
+    "deploy:local": "hardhat deploy --network localhost",
+    
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "fhevmjs": "^0.6.1",
+    "dotenv": "^16.4.5",
+    "vitepress": "latest",
+    "vue": "latest"
   },
   "devDependencies": {
+    "@fhevm/hardhat-plugin": "latest",
+    "@fhevm/solidity": "latest",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "hardhat": "^2.22.5",
     "hardhat-deploy": "^0.12.4",
-    "dotenv": "^16.4.5"
+    "ethers": "^6.13.0",
+    "typescript": "^5.4.5",
+    "ts-node": "^10.9.2"
   }
 }
