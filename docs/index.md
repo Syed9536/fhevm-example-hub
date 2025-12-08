@@ -2,22 +2,22 @@
 layout: home
 
 hero:
-  name: "FHEVM Example Hub"
-  text: "Privacy-Preserving dApp Scaffolder"
-  tagline: Build confidential smart contracts on Zama in seconds.
+  name: "FHEVM Hub"
+  text: "Build Confidential dApps on Zama"
+  tagline: "Stop wrestling with complex docs. Get copy-paste ready Solidity templates optimized for local development."
   actions:
     - theme: brand
-      text: Get Started 🚀
+      text: 🚀 Start Building
       link: /guide/getting-started
     - theme: alt
-      text: View Templates 📚
-      link: /examples
+      text: View Examples
+      link: /examples/blind-auction
 
 features:
-  - title: ⚡ Instant Setup
-    details: Generate a fully configured Hardhat environment with one command.
-  - title: 🛡️ Pre-Built Logic
-    details: Includes Blind Auctions, Confidential Tokens, and Access Control.
-  - title: 📚 Auto-Documentation
-    details: Automatically generates READMEs from your Solidity comments.
+  - title: Copy-Paste Ready
+    details: Don't start from scratch. Use our pre-built templates for Blind Auctions, ERC-20, and more.
+  - title: Beginner Friendly
+    details: Simplified explanations for complex FHE concepts. No PhD required.
+  - title: FHEVM Optimized
+    details: Specifically designed for Zama's fhEVM logic and limitations.
 ---
